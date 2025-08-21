@@ -9,12 +9,11 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "Simple REST API for flight booking system",
+  "description": "Voice AI API server for Helm AI",
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
-    "helmet": "^7.0.0",
-    "aws-sdk": "^2.1467.0"
+    "helmet": "^7.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

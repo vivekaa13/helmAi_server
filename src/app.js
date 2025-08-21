@@ -2,9 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 
-const flightRoutes = require('./routes/flights');
-const bookingRoutes = require('./routes/bookings');
-const userRoutes = require('./routes/users');
 const voiceRoutes = require('./routes/voice');
 
 const app = express();
@@ -14,9 +11,6 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/flights', flightRoutes);
-app.use('/api/bookings', bookingRoutes);
-app.use('/api/users', userRoutes);
 app.use('/api/voice', voiceRoutes);
 
 app.get('/', (req, res) => {
@@ -24,10 +18,6 @@ app.get('/', (req, res) => {
     message: 'Helm AI Server API',
     version: '1.0.0',
     endpoints: [
-      'GET /api/flights - Get flights',
-      'POST /api/bookings/confirm - Confirm booking',
-      'GET /api/users/profile - Get user profile',
-      'POST /api/users/login - User login',
       'POST /api/voice/prompt - Voice prompt processing'
     ]
   });

@@ -16,19 +16,28 @@ const voicePrompt = async (req, res) => {
     // Use userId from request or default
     const sessionUserId = userId || 'default';
     
-    // Invoke the Bedrock agent
+    console.log(`🎤 Voice prompt received from user: ${sessionUserId}`);
+    
+    // Invoke the Bedrock agent with auto-retry and reconnection
     const result = await bedrockService.invokeAgent(prompt, sessionUserId);
+    
+    // Always return a response - even if Bedrock fails
+    if (!result.success) {
+      console.log(`⚠️ Bedrock failed, but returning error response to keep connection alive`);
+    }
     
     // Return the response
     res.json(result);
     
   } catch (error) {
-    console.error('❌ Error in voicePrompt controller:', error);
+    console.error('❌ Error in voicePrompt controller (will not crash):', error);
     
+    // Never let the controller crash - always return a response
     res.status(500).json({
       success: false,
-      error: 'Internal server error while processing voice prompt',
+      error: 'Service temporarily unavailable - auto-reconnecting in background',
       details: error.message,
+      connectionStatus: 'reconnecting',
       timestamp: new Date().toISOString()
     });
   }
@@ -54,7 +63,7 @@ const getSessionInfo = async (req, res) => {
     });
     
   } catch (error) {
-    console.error('❌ Error getting session info:', error);
+    console.error('❌ Error getting session info (non-critical):', error);
     res.status(500).json({
       success: false,
       error: 'Failed to get session information',
@@ -79,7 +88,7 @@ const endSession = async (req, res) => {
     });
     
   } catch (error) {
-    console.error('❌ Error ending session:', error);
+    console.error('❌ Error ending session (non-critical):', error);
     res.status(500).json({
       success: false,
       error: 'Failed to end session',
@@ -92,13 +101,23 @@ const endSession = async (req, res) => {
 const getStatus = async (req, res) => {
   try {
     const status = bedrockService.getStatus();
+    
+    // Add server health information
+    const serverHealth = {
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      nodeVersion: process.version,
+      platform: process.platform
+    };
+    
     res.json({
       success: true,
-      service: 'Bedrock Agent Service',
+      service: 'Bedrock Agent Service with Auto-Reconnect',
+      server: serverHealth,
       ...status
     });
   } catch (error) {
-    console.error('❌ Error getting service status:', error);
+    console.error('❌ Error getting service status (non-critical):', error);
     res.status(500).json({
       success: false,
       error: 'Failed to get service status',

@@ -36,15 +36,11 @@ const startServer = async () => {
     // Initialize Bedrock service
     await bedrockService.initialize();
     
-    // Validate agent setup
+    // Validate agent setup (don't fail if validation fails)
     const isValid = await bedrockService.validateAgentSetup();
     if (!isValid) {
       console.log('⚠️  Agent validation failed, but server will continue running.');
-      console.log('📋 Common issues:');
-      console.log('   • Agent not found - check BEDROCK_AGENT_ID');
-      console.log('   • Alias not found - check BEDROCK_AGENT_ALIAS_ID');
-      console.log('   • Agent not prepared - prepare in AWS Console');
-      console.log('   • Wrong region - check AWS_REGION');
+      console.log('📋 The service will keep trying to reconnect automatically.');
     }
     
     // Set up session cleanup (every 30 minutes)
@@ -53,17 +49,76 @@ const startServer = async () => {
     }, 30 * 60 * 1000);
     
     // Start the server
-    app.listen(PORT, '0.0.0.0', () => {
+    const server = app.listen(PORT, '0.0.0.0', () => {
       console.log(`🚀 Helm AI Server running on port ${PORT}`);
       console.log(`📡 Access the API at: http://localhost:${PORT}`);
-      console.log(`🤖 Bedrock Agent integration ${isValid ? 'verified' : 'needs attention'}`);
-    }).on('error', (err) => {
-      console.error('❌ Server error:', err);
+      console.log(`🤖 Bedrock Agent integration ${isValid ? 'verified ✅' : 'reconnecting 🔄'}`);
+      console.log(`🛡️  Auto-reconnect enabled - server will never stop`);
     });
+
+    // Handle server errors gracefully - never let server die
+    server.on('error', (err) => {
+      console.error('❌ Server error (will attempt recovery):', err);
+      
+      if (err.code === 'EADDRINUSE') {
+        console.log('🔄 Port in use, trying again in 5 seconds...');
+        setTimeout(() => {
+          server.close();
+          startServer(); // Restart server
+        }, 5000);
+      }
+    });
+
+    // Handle uncaught exceptions - log but don't crash
+    process.on('uncaughtException', (error) => {
+      console.error('💥 Uncaught Exception (continuing anyway):', error);
+    });
+
+    // Handle unhandled promise rejections - log but don't crash  
+    process.on('unhandledRejection', (reason, promise) => {
+      console.error('💥 Unhandled Rejection (continuing anyway):', reason);
+    });
+
+    // Graceful shutdown handlers
+    const gracefulShutdown = async (signal) => {
+      console.log(`\n🛑 Received ${signal}, starting graceful shutdown...`);
+      
+      try {
+        // Stop accepting new connections
+        server.close(async () => {
+          console.log('📡 HTTP server closed');
+          
+          // Shutdown Bedrock service gracefully
+          await bedrockService.shutdown();
+          
+          console.log('✅ Graceful shutdown complete');
+          process.exit(0);
+        });
+        
+        // Force shutdown after 30 seconds
+        setTimeout(() => {
+          console.log('⚠️ Forcing shutdown after timeout');
+          process.exit(1);
+        }, 30000);
+        
+      } catch (error) {
+        console.error('❌ Error during shutdown:', error);
+        process.exit(1);
+      }
+    };
+
+    // Listen for shutdown signals
+    process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+    process.on('SIGINT', () => gracefulShutdown('SIGINT'));
     
   } catch (error) {
     console.error('❌ Failed to start server:', error);
-    process.exit(1);
+    console.log('🔄 Retrying server start in 10 seconds...');
+    
+    // Don't exit - retry starting the server
+    setTimeout(() => {
+      startServer();
+    }, 10000);
   }
 };
 

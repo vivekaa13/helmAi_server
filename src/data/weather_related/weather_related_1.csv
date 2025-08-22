@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+weather_001,"My flight was cancelled due to weather",weather_related,weather,high
+weather_002,"What's your policy on weather delays?",weather_related,weather,medium
+weather_003,"Can I change my flight due to bad weather?",weather_related,weather,high
+weather_004,"I don't want to fly in this storm",weather_related,weather,medium
+weather_005,"Will weather affect my connecting flight?",weather_related,weather,high
+weather_006,"How do you handle snow delays?",weather_related,weather,medium
+weather_007,"I'm concerned about turbulence",weather_related,weather,medium
+weather_008,"Can I get a refund for weather cancellation?",weather_related,weather,high
+weather_009,"What if weather is bad at my destination?",weather_related,weather,medium
+weather_010,"I want to postpone due to hurricane warnings",weather_related,weather,high
+weather_011,"How early do you cancel for weather?",weather_related,weather,medium
+weather_012,"Will you accommodate me if I'm scared to fly?",weather_related,weather,medium
+weather_013,"What weather conditions cancel flights?",weather_related,weather,medium
+weather_014,"I'm stuck due to weather, where do I stay?",weather_related,weather,high
+weather_015,"Can I track weather delays in real-time?",weather_related,weather,medium
+weather_016,"What compensation for weather delays?",weather_related,weather,medium
+weather_017,"I want to leave before the storm hits",weather_related,weather,high
+weather_018,"How do you prioritize rebooking after weather?",weather_related,weather,medium
+weather_019,"My destination has severe weather warnings",weather_related,weather,high
+weather_020,"Can I change to a different route due to weather?",weather_related,weather,medium

@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+general_001,"I need help with my booking",general_inquiry,general,medium
+general_002,"Who can I talk to about my problem?",general_inquiry,general,medium
+general_003,"I have a complaint about my service",general_inquiry,general,medium
+general_004,"Can you help me with customer service?",general_inquiry,general,medium
+general_005,"I need to speak to a supervisor",general_inquiry,general,medium
+general_006,"What are your operating hours?",general_inquiry,general,low
+general_007,"How do I contact customer support?",general_inquiry,general,medium
+general_008,"I want to provide feedback",general_inquiry,general,low
+general_009,"Where is your nearest office?",general_inquiry,general,low
+general_010,"I have a question about your policies",general_inquiry,general,medium
+general_011,"Can you explain your terms and conditions?",general_inquiry,general,medium
+general_012,"I need help navigating your website",general_inquiry,general,medium
+general_013,"What services do you offer?",general_inquiry,general,low
+general_014,"I want to make a suggestion",general_inquiry,general,low
+general_015,"How do I escalate my issue?",general_inquiry,general,medium
+general_016,"I need assistance with accessibility",general_inquiry,general,high
+general_017,"Can you help me understand my rights?",general_inquiry,general,medium
+general_018,"I want to file a formal complaint",general_inquiry,general,medium
+general_019,"What's your customer satisfaction guarantee?",general_inquiry,general,medium
+general_020,"I need help in another language",general_inquiry,general,medium

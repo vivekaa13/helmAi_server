@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+miles_001,"How do I earn frequent flyer miles?",loyalty_program,loyalty,medium
+miles_002,"Can I use miles to book a ticket?",loyalty_program,loyalty,medium
+miles_003,"How many miles do I need for a free flight?",loyalty_program,loyalty,medium
+miles_004,"I want to join your loyalty program",loyalty_program,loyalty,medium
+miles_005,"How do I check my miles balance?",loyalty_program,loyalty,medium
+miles_006,"Can I transfer miles to someone else?",loyalty_program,loyalty,medium
+miles_007,"Do my miles expire?",loyalty_program,loyalty,medium
+miles_008,"I didn't receive miles for my flight",loyalty_program,loyalty,medium
+miles_009,"Can I earn miles on partner airlines?",loyalty_program,loyalty,medium
+miles_010,"How do I upgrade using miles?",loyalty_program,loyalty,medium
+miles_011,"What are the benefits of elite status?",loyalty_program,loyalty,medium
+miles_012,"Can I combine cash and miles for booking?",loyalty_program,loyalty,medium
+miles_013,"How do I redeem miles for upgrades?",loyalty_program,loyalty,medium
+miles_014,"I want to donate my miles to charity",loyalty_program,loyalty,low
+miles_015,"Can I use miles for seat upgrades?",loyalty_program,loyalty,medium
+miles_016,"How do I maintain my elite status?",loyalty_program,loyalty,medium
+miles_017,"What's the difference between miles and points?",loyalty_program,loyalty,low
+miles_018,"Can I earn miles with hotel stays?",loyalty_program,loyalty,medium
+miles_019,"I want to buy additional miles",loyalty_program,loyalty,medium
+miles_020,"How do I link my frequent flyer account?",loyalty_program,loyalty,medium

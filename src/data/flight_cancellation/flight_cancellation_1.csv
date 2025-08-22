@@ -1,0 +1,41 @@
+id,text,intent,category,priority
+cancel_001,"I need to cancel my flight",flight_cancellation,cancellation,high
+cancel_002,"How do I cancel my reservation?",flight_cancellation,cancellation,high
+cancel_003,"Can I get a refund if I cancel?",flight_cancellation,cancellation,high
+cancel_004,"What's your cancellation policy?",flight_cancellation,cancellation,high
+cancel_005,"I want to cancel my ticket and get money back",flight_cancellation,cancellation,high
+cancel_006,"How much does it cost to cancel a flight?",flight_cancellation,cancellation,medium
+cancel_007,"Can I cancel within 24 hours for free?",flight_cancellation,cancellation,high
+cancel_008,"I need to cancel due to emergency",flight_cancellation,cancellation,high
+cancel_009,"What happens if I cancel my non-refundable ticket?",flight_cancellation,cancellation,medium
+cancel_010,"How do I cancel a group booking?",flight_cancellation,cancellation,medium
+cancel_011,"Can I cancel part of my round-trip ticket?",flight_cancellation,cancellation,medium
+cancel_012,"I want to cancel and rebook later",flight_cancellation,cancellation,medium
+cancel_013,"What's the deadline for cancellation?",flight_cancellation,cancellation,medium
+cancel_014,"How do I cancel if I booked through a travel agent?",flight_cancellation,cancellation,medium
+cancel_015,"Can I cancel online or do I need to call?",flight_cancellation,cancellation,medium
+cancel_016,"I booked the wrong date, can I cancel?",flight_cancellation,cancellation,high
+cancel_017,"What if I need to cancel due to illness?",flight_cancellation,cancellation,high
+cancel_018,"How long does a refund take after cancellation?",flight_cancellation,cancellation,medium
+cancel_019,"Can I cancel and get travel credit instead?",flight_cancellation,cancellation,medium
+cancel_020,"I want to cancel my international flight",flight_cancellation,cancellation,medium
+cancel_021,"I want to cancel and rebook for a different date",flight_cancellation,cancellation,high
+cancel_022,"Can I cancel just one leg of my round trip?",flight_cancellation,cancellation,medium
+cancel_023,"I need to cancel due to visa denial",flight_cancellation,cancellation,high
+cancel_024,"How do I cancel a ticket bought with miles?",flight_cancellation,cancellation,medium
+cancel_025,"I want to cancel within the grace period",flight_cancellation,cancellation,high
+cancel_026,"Can I cancel and get a travel credit?",flight_cancellation,cancellation,medium
+cancel_027,"I need to cancel due to work emergency",flight_cancellation,cancellation,high
+cancel_028,"How do I cancel a group booking partially?",flight_cancellation,cancellation,medium
+cancel_029,"I want to cancel and avoid fees",flight_cancellation,cancellation,high
+cancel_030,"Can I cancel if the flight time changed?",flight_cancellation,cancellation,high
+cancel_031,"I need to cancel due to family emergency",flight_cancellation,cancellation,high
+cancel_032,"How long do I have to cancel for full refund?",flight_cancellation,cancellation,medium
+cancel_033,"I want to cancel my premium class ticket",flight_cancellation,cancellation,medium
+cancel_034,"Can I cancel if I'm not feeling well?",flight_cancellation,cancellation,high
+cancel_035,"I need to cancel my international booking",flight_cancellation,cancellation,medium
+cancel_036,"How do I cancel if I booked with points?",flight_cancellation,cancellation,medium
+cancel_037,"I want to cancel due to schedule conflict",flight_cancellation,cancellation,medium
+cancel_038,"Can I cancel and get original payment back?",flight_cancellation,cancellation,high
+cancel_039,"I need to cancel because of travel restrictions",flight_cancellation,cancellation,high
+cancel_040,"How do I cancel a last-minute booking?",flight_cancellation,cancellation,medium

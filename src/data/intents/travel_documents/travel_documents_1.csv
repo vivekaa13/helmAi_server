@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+travel_001,"What documents do I need to travel?",travel_documents,documentation,high
+travel_002,"Is my passport valid for travel?",travel_documents,documentation,high
+travel_003,"Do I need a visa for my destination?",travel_documents,documentation,high
+travel_004,"Can I travel with an expired ID?",travel_documents,documentation,high
+travel_005,"What's the passport validity requirement?",travel_documents,documentation,high
+travel_006,"I lost my passport before travel",travel_documents,documentation,high
+travel_007,"Can I use a driver's license for domestic flights?",travel_documents,documentation,high
+travel_008,"Do children need ID for flights?",travel_documents,documentation,high
+travel_009,"I have a new passport with different name",travel_documents,documentation,high
+travel_010,"What if my name on ticket doesn't match ID?",travel_documents,documentation,high
+travel_011,"Can I travel with a temporary passport?",travel_documents,documentation,medium
+travel_012,"Do I need vaccinations for my destination?",travel_documents,documentation,medium
+travel_013,"What's required for international travel?",travel_documents,documentation,medium
+travel_014,"I'm traveling with someone else's child",travel_documents,documentation,high
+travel_015,"Can I travel while my passport is being renewed?",travel_documents,documentation,high
+travel_016,"What documents do I need for military travel?",travel_documents,documentation,medium
+travel_017,"I have dual citizenship, which passport to use?",travel_documents,documentation,medium
+travel_018,"Can I travel with a damaged passport?",travel_documents,documentation,high
+travel_019,"What if I'm denied entry at destination?",travel_documents,documentation,medium
+travel_020,"I need emergency travel documents",travel_documents,documentation,high

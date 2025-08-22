@@ -1,0 +1,41 @@
+id,text,intent,category,priority
+checkin_001,"How do I check in for my flight?",flight_checkin,checkin,high
+checkin_002,"When can I check in online?",flight_checkin,checkin,high
+checkin_003,"I can't find my booking to check in",flight_checkin,checkin,high
+checkin_004,"How early can I check in?",flight_checkin,checkin,medium
+checkin_005,"Can I check in at the airport?",flight_checkin,checkin,medium
+checkin_006,"I need help with mobile check-in",flight_checkin,checkin,high
+checkin_007,"What do I need to check in?",flight_checkin,checkin,high
+checkin_008,"Can I check in someone else?",flight_checkin,checkin,medium
+checkin_009,"I'm having trouble checking in online",flight_checkin,checkin,high
+checkin_010,"How do I get my boarding pass?",flight_checkin,checkin,high
+checkin_011,"Can I check in with my phone?",flight_checkin,checkin,medium
+checkin_012,"What time does check-in close?",flight_checkin,checkin,medium
+checkin_013,"I missed online check-in, what now?",flight_checkin,checkin,high
+checkin_014,"How do I check in for international flights?",flight_checkin,checkin,medium
+checkin_015,"Can I change my seat during check-in?",flight_checkin,checkin,medium
+checkin_016,"I need to check in my whole family",flight_checkin,checkin,medium
+checkin_017,"How do I check in with special needs?",flight_checkin,checkin,medium
+checkin_018,"Can I check in without a passport number?",flight_checkin,checkin,medium
+checkin_019,"I lost my confirmation number for check-in",flight_checkin,checkin,high
+checkin_020,"How do I print my boarding pass at home?",flight_checkin,checkin,medium
+checkin_021,"I can't complete mobile check-in",flight_checkin,checkin,high
+checkin_022,"How do I check in with an infant?",flight_checkin,checkin,high
+checkin_023,"I need to check in for multiple passengers",flight_checkin,checkin,medium
+checkin_024,"Can I check in if my flight is delayed?",flight_checkin,checkin,medium
+checkin_025,"I want to check in and select seats",flight_checkin,checkin,medium
+checkin_026,"How do I check in with special assistance?",flight_checkin,checkin,high
+checkin_027,"I can't print my boarding pass at home",flight_checkin,checkin,medium
+checkin_028,"Can I check in without internet?",flight_checkin,checkin,medium
+checkin_029,"I need help with international check-in",flight_checkin,checkin,medium
+checkin_030,"How do I check in with extra baggage?",flight_checkin,checkin,medium
+checkin_031,"I want to check in but forgot my booking details",flight_checkin,checkin,high
+checkin_032,"Can I check in using just my name?",flight_checkin,checkin,medium
+checkin_033,"I need to check in for a code share flight",flight_checkin,checkin,medium
+checkin_034,"How do I check in with a pet?",flight_checkin,checkin,medium
+checkin_035,"I can't find the check-in option online",flight_checkin,checkin,high
+checkin_036,"Can I check in early for my flight?",flight_checkin,checkin,medium
+checkin_037,"I need to check in but have connecting flights",flight_checkin,checkin,medium
+checkin_038,"How do I check in with mobility equipment?",flight_checkin,checkin,high
+checkin_039,"I want to check in but need to change seats",flight_checkin,checkin,medium
+checkin_040,"Can I check in using a different device?",flight_checkin,checkin,medium

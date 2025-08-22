@@ -1,0 +1,41 @@
+id,text,intent,category,priority
+baggage_001,"What's the baggage allowance?",baggage_inquiry,baggage,high
+baggage_002,"How much can my carry-on weigh?",baggage_inquiry,baggage,high
+baggage_003,"Can I bring an extra bag?",baggage_inquiry,baggage,medium
+baggage_004,"What items are prohibited in luggage?",baggage_inquiry,baggage,high
+baggage_005,"How do I report lost baggage?",baggage_inquiry,baggage,high
+baggage_006,"My bag is delayed, what should I do?",baggage_inquiry,baggage,high
+baggage_007,"Can I track my checked baggage?",baggage_inquiry,baggage,medium
+baggage_008,"What's the fee for excess baggage?",baggage_inquiry,baggage,medium
+baggage_009,"Can I bring liquids in my carry-on?",baggage_inquiry,baggage,high
+baggage_010,"What size can my carry-on be?",baggage_inquiry,baggage,high
+baggage_011,"I left something in my checked bag",baggage_inquiry,baggage,medium
+baggage_012,"Can I add baggage after booking?",baggage_inquiry,baggage,medium
+baggage_013,"What if my bag is damaged?",baggage_inquiry,baggage,high
+baggage_014,"Can I bring musical instruments?",baggage_inquiry,baggage,medium
+baggage_015,"How do I declare valuable items?",baggage_inquiry,baggage,medium
+baggage_016,"Can I bring sports equipment?",baggage_inquiry,baggage,medium
+baggage_017,"What's the weight limit for checked bags?",baggage_inquiry,baggage,high
+baggage_018,"I need to claim compensation for lost baggage",baggage_inquiry,baggage,high
+baggage_019,"Can I bring medication in my carry-on?",baggage_inquiry,baggage,high
+baggage_020,"How early should I arrive for baggage drop?",baggage_inquiry,baggage,medium
+baggage_021,"Can I bring my laptop bag as carry-on?",baggage_inquiry,baggage,high
+baggage_022,"What happens if my bag is overweight?",baggage_inquiry,baggage,high
+baggage_023,"I need to ship my bags separately",baggage_inquiry,baggage,medium
+baggage_024,"Can I bring gifts in my luggage?",baggage_inquiry,baggage,medium
+baggage_025,"What's not allowed in checked baggage?",baggage_inquiry,baggage,high
+baggage_026,"I have fragile items to pack",baggage_inquiry,baggage,medium
+baggage_027,"Can I bring food in my carry-on?",baggage_inquiry,baggage,high
+baggage_028,"I need to travel with medical supplies",baggage_inquiry,baggage,high
+baggage_029,"What if I need my bag on a long layover?",baggage_inquiry,baggage,medium
+baggage_030,"Can I combine baggage allowances?",baggage_inquiry,baggage,medium
+baggage_031,"I want to insure my valuable luggage",baggage_inquiry,baggage,medium
+baggage_032,"How do I pack electronics safely?",baggage_inquiry,baggage,medium
+baggage_033,"Can I bring wrapped presents?",baggage_inquiry,baggage,medium
+baggage_034,"I need help with international baggage rules",baggage_inquiry,baggage,medium
+baggage_035,"What's the policy on batteries in luggage?",baggage_inquiry,baggage,high
+baggage_036,"I want to bring camping gear",baggage_inquiry,baggage,medium
+baggage_037,"Can I check in bags early?",baggage_inquiry,baggage,medium
+baggage_038,"I have prescription medications to pack",baggage_inquiry,baggage,high
+baggage_039,"What if my bag contents spill during flight?",baggage_inquiry,baggage,medium
+baggage_040,"I need to travel with work equipment",baggage_inquiry,baggage,medium

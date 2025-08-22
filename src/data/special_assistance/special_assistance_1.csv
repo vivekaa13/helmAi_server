@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+special_001,"I need wheelchair assistance",special_assistance,assistance,high
+special_002,"Can you help with dietary restrictions?",special_assistance,assistance,high
+special_003,"I'm traveling with a service animal",special_assistance,assistance,high
+special_004,"I need oxygen during the flight",special_assistance,assistance,high
+special_005,"Can you assist with vision impairment?",special_assistance,assistance,high
+special_006,"I have a hearing impairment",special_assistance,assistance,high
+special_007,"I need help with mobility at the airport",special_assistance,assistance,high
+special_008,"Can I bring medical equipment?",special_assistance,assistance,high
+special_009,"I'm traveling while pregnant",special_assistance,assistance,medium
+special_010,"I need assistance for my elderly parent",special_assistance,assistance,high
+special_011,"Can you help with language barriers?",special_assistance,assistance,medium
+special_012,"I have anxiety about flying",special_assistance,assistance,medium
+special_013,"I need kosher meals on the flight",special_assistance,assistance,medium
+special_014,"Can I get priority boarding?",special_assistance,assistance,medium
+special_015,"I'm traveling with a small child alone",special_assistance,assistance,high
+special_016,"I need diabetic meal options",special_assistance,assistance,medium
+special_017,"Can you assist with autism support?",special_assistance,assistance,high
+special_018,"I have severe allergies, what precautions?",special_assistance,assistance,high
+special_019,"I need help transferring between wheelchairs",special_assistance,assistance,high
+special_020,"Can I pre-board due to my condition?",special_assistance,assistance,medium

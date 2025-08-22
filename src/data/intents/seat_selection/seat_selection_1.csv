@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+seats_001,"How do I select my seat?",seat_selection,seating,high
+seats_002,"Can I change my seat assignment?",seat_selection,seating,medium
+seats_003,"What seats are available?",seat_selection,seating,medium
+seats_004,"I want an aisle seat",seat_selection,seating,medium
+seats_005,"Can I reserve a window seat?",seat_selection,seating,medium
+seats_006,"How much extra for premium seats?",seat_selection,seating,medium
+seats_007,"I need seats together for my family",seat_selection,seating,high
+seats_008,"Can I upgrade to first class seats?",seat_selection,seating,medium
+seats_009,"I have mobility issues, what seats work?",seat_selection,seating,high
+seats_010,"Are there seats with extra legroom?",seat_selection,seating,medium
+seats_011,"I want to sit near the front",seat_selection,seating,medium
+seats_012,"Can I change seats after check-in?",seat_selection,seating,medium
+seats_013,"What's the seat map for this aircraft?",seat_selection,seating,medium
+seats_014,"I'm traveling with an infant, what seats?",seat_selection,seating,high
+seats_015,"Can I choose seats for free?",seat_selection,seating,medium
+seats_016,"I want seats away from the bathroom",seat_selection,seating,low
+seats_017,"What's the difference between seat classes?",seat_selection,seating,medium
+seats_018,"Can I reserve emergency exit row seats?",seat_selection,seating,medium
+seats_019,"I need wheelchair accessible seating",seat_selection,seating,high
+seats_020,"How do I see which seats have power outlets?",seat_selection,seating,low

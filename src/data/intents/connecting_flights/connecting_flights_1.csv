@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+connecting_001,"I have a connecting flight, what do I do?",connecting_flights,connections,high
+connecting_002,"Will my bags transfer automatically?",connecting_flights,connections,high
+connecting_003,"How much time do I need for connections?",connecting_flights,connections,high
+connecting_004,"I missed my connecting flight",connecting_flights,connections,high
+connecting_005,"Do I need to go through security again?",connecting_flights,connections,high
+connecting_006,"Where do I find my connecting gate?",connecting_flights,connections,high
+connecting_007,"What if my connection is in a different terminal?",connecting_flights,connections,medium
+connecting_008,"I have an international connection",connecting_flights,connections,medium
+connecting_009,"Will the airline wait if I'm delayed?",connecting_flights,connections,high
+connecting_010,"I need to collect my bags between flights",connecting_flights,connections,medium
+connecting_011,"What's the minimum connection time?",connecting_flights,connections,medium
+connecting_012,"I have a short layover, will I make it?",connecting_flights,connections,high
+connecting_013,"Do I need to check in again for my connection?",connecting_flights,connections,medium
+connecting_014,"What if immigration takes too long?",connecting_flights,connections,medium
+connecting_015,"I have connecting flights with different airlines",connecting_flights,connections,medium
+connecting_016,"Can I leave the airport during my layover?",connecting_flights,connections,medium
+connecting_017,"I'm worried about tight connections",connecting_flights,connections,medium
+connecting_018,"What happens if I miss my last connection?",connecting_flights,connections,high
+connecting_019,"I have overnight connection, where do I stay?",connecting_flights,connections,medium
+connecting_020,"How do I find transportation between terminals?",connecting_flights,connections,medium

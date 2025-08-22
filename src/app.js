@@ -6,6 +6,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 const voiceRoutes = require('./routes/voice');
+const intentRoutes = require('./routes/intents');
 const bedrockService = require('./services/bedrockService');
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/voice', voiceRoutes);
+app.use('/api/intents', intentRoutes);
 
 app.get('/', (req, res) => {
   res.json({
@@ -25,7 +27,11 @@ app.get('/', (req, res) => {
       'POST /api/voice/prompt - Send prompt to Bedrock agent',
       'GET /api/voice/session/:userId - Get session info',  
       'DELETE /api/voice/session/:userId - End session',
-      'GET /api/voice/status - Get service status'
+      'GET /api/voice/status - Get service status',
+      'POST /api/intents/recognize - Recognize intent from text',
+      'POST /api/intents/populate - Populate vector database',
+      'GET /api/intents/stats - Get database statistics',
+      'DELETE /api/intents/clear - Clear database'
     ]
   });
 });

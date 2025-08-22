@@ -1,0 +1,41 @@
+id,text,intent,category,priority
+booking_001,"I want to book a flight from New York to Los Angeles",flight_booking,booking,high
+booking_002,"How do I purchase a ticket online?",flight_booking,booking,high
+booking_003,"Can you help me book a round trip ticket?",flight_booking,booking,high
+booking_004,"I need to reserve a seat on tomorrow's flight",flight_booking,booking,high
+booking_005,"What's the process for booking an international flight?",flight_booking,booking,high
+booking_006,"I'd like to make a flight reservation",flight_booking,booking,high
+booking_007,"How can I book multiple passengers on one reservation?",flight_booking,booking,medium
+booking_008,"Can I book a flight for someone else?",flight_booking,booking,medium
+booking_009,"What information do I need to book a ticket?",flight_booking,booking,high
+booking_010,"I want to book a one-way ticket to Miami",flight_booking,booking,high
+booking_011,"How do I book a last-minute flight?",flight_booking,booking,medium
+booking_012,"Can I reserve a flight without paying immediately?",flight_booking,booking,medium
+booking_013,"I need to book a business class ticket",flight_booking,booking,medium
+booking_014,"How far in advance can I book a flight?",flight_booking,booking,low
+booking_015,"What's the cheapest way to book a ticket?",flight_booking,booking,high
+booking_016,"I want to book a connecting flight",flight_booking,booking,medium
+booking_017,"Can I book a flight using miles?",flight_booking,booking,medium
+booking_018,"How do I book a group reservation?",flight_booking,booking,medium
+booking_019,"I need to book an emergency flight",flight_booking,booking,high
+booking_020,"What payment methods do you accept for booking?",flight_booking,booking,high
+booking_021,"How do I book a red-eye flight?",flight_booking,booking,medium
+booking_022,"I want to book the earliest flight available",flight_booking,booking,medium
+booking_023,"Can I book a standby ticket?",flight_booking,booking,medium
+booking_024,"I need to book a flight departing today",flight_booking,booking,high
+booking_025,"How do I book a multi-city trip?",flight_booking,booking,medium
+booking_026,"I want to book using a travel voucher",flight_booking,booking,medium
+booking_027,"Can I book a pet-friendly flight?",flight_booking,booking,medium
+booking_028,"I need to book with flexible dates",flight_booking,booking,medium
+booking_029,"How do I book a corporate travel account?",flight_booking,booking,low
+booking_030,"I want to book the cheapest available option",flight_booking,booking,high
+booking_031,"Can I book without creating an account?",flight_booking,booking,medium
+booking_032,"I need help booking on mobile app",flight_booking,booking,medium
+booking_033,"How do I book with a promo code?",flight_booking,booking,medium
+booking_034,"I want to book a flight with a stopover",flight_booking,booking,medium
+booking_035,"Can I book and pay later?",flight_booking,booking,medium
+booking_036,"I need to book for an unaccompanied minor",flight_booking,booking,high
+booking_037,"How do I book with special meal requests?",flight_booking,booking,medium
+booking_038,"I want to book the shortest flight time",flight_booking,booking,medium
+booking_039,"Can I book multiple destinations in one trip?",flight_booking,booking,medium
+booking_040,"I need to book with my corporate rate",flight_booking,booking,medium

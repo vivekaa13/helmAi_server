@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+pricing_001,"How much does a ticket cost?",pricing_inquiry,pricing,high
+pricing_002,"Are there any discounts available?",pricing_inquiry,pricing,high
+pricing_003,"When are the cheapest times to fly?",pricing_inquiry,pricing,medium
+pricing_004,"Can I get a student discount?",pricing_inquiry,pricing,medium
+pricing_005,"Do you offer senior citizen pricing?",pricing_inquiry,pricing,medium
+pricing_006,"What's included in the ticket price?",pricing_inquiry,pricing,medium
+pricing_007,"Are there hidden fees I should know about?",pricing_inquiry,pricing,high
+pricing_008,"Can I get a military discount?",pricing_inquiry,pricing,medium
+pricing_009,"How do I find the best deals?",pricing_inquiry,pricing,medium
+pricing_010,"What's the difference in price between classes?",pricing_inquiry,pricing,medium
+pricing_011,"Can I price match with competitors?",pricing_inquiry,pricing,medium
+pricing_012,"I found a cheaper price elsewhere",pricing_inquiry,pricing,medium
+pricing_013,"What fees are charged at booking?",pricing_inquiry,pricing,high
+pricing_014,"Can I get a group discount?",pricing_inquiry,pricing,medium
+pricing_015,"How do prices change over time?",pricing_inquiry,pricing,medium
+pricing_016,"What's your price guarantee policy?",pricing_inquiry,pricing,medium
+pricing_017,"Are taxes included in the displayed price?",pricing_inquiry,pricing,high
+pricing_018,"Can I get a refund if prices drop?",pricing_inquiry,pricing,medium
+pricing_019,"What factors affect ticket pricing?",pricing_inquiry,pricing,low
+pricing_020,"I want to know about fare rules",pricing_inquiry,pricing,medium

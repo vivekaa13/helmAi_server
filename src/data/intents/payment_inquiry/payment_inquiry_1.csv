@@ -1,0 +1,21 @@
+id,text,intent,category,priority
+payment_001,"What payment methods do you accept?",payment_inquiry,payment,high
+payment_002,"Can I pay with multiple credit cards?",payment_inquiry,payment,medium
+payment_003,"Do you accept PayPal for booking?",payment_inquiry,payment,medium
+payment_004,"I want to pay with cash",payment_inquiry,payment,medium
+payment_005,"Can I use a debit card?",payment_inquiry,payment,medium
+payment_006,"What currencies do you accept?",payment_inquiry,payment,medium
+payment_007,"I need a receipt for my payment",payment_inquiry,payment,medium
+payment_008,"My payment was declined, what now?",payment_inquiry,payment,high
+payment_009,"Can I pay in installments?",payment_inquiry,payment,medium
+payment_010,"I was charged twice for my ticket",payment_inquiry,payment,high
+payment_011,"How do I get a refund to my card?",payment_inquiry,payment,high
+payment_012,"Can I use gift cards or vouchers?",payment_inquiry,payment,medium
+payment_013,"What if my card expires before travel?",payment_inquiry,payment,medium
+payment_014,"I need to change my payment method",payment_inquiry,payment,medium
+payment_015,"Can I pay at the airport?",payment_inquiry,payment,medium
+payment_016,"What's the difference between booking and payment?",payment_inquiry,payment,low
+payment_017,"I want to dispute a charge",payment_inquiry,payment,high
+payment_018,"Can I get a payment plan for expensive tickets?",payment_inquiry,payment,medium
+payment_019,"What happens if payment fails during booking?",payment_inquiry,payment,medium
+payment_020,"I need help with foreign transaction fees",payment_inquiry,payment,medium

@@ -1,0 +1,41 @@
+id,text,intent,category,priority
+change_001,"I need to change my flight date",flight_change,changes,high
+change_002,"Can I modify my booking?",flight_change,changes,high
+change_003,"How do I change my destination?",flight_change,changes,medium
+change_004,"I want to upgrade to business class",flight_change,changes,medium
+change_005,"Can I change the passenger name?",flight_change,changes,high
+change_006,"How much does it cost to change my flight?",flight_change,changes,high
+change_007,"I need to change my departure time",flight_change,changes,high
+change_008,"Can I change my ticket to an earlier flight?",flight_change,changes,medium
+change_009,"What's your policy on flight changes?",flight_change,changes,medium
+change_010,"I want to change from economy to first class",flight_change,changes,medium
+change_011,"How do I modify my return date?",flight_change,changes,medium
+change_012,"Can I change my flight for free?",flight_change,changes,medium
+change_013,"I need to change my seat selection",flight_change,changes,low
+change_014,"How do I change my meal preference?",flight_change,changes,low
+change_015,"Can I change my flight the same day?",flight_change,changes,medium
+change_016,"I want to change to a different airline",flight_change,changes,low
+change_017,"How do I change my contact information?",flight_change,changes,low
+change_018,"Can I change my special assistance request?",flight_change,changes,medium
+change_019,"I need to change my flight due to weather",flight_change,changes,high
+change_020,"How do I change my booking online?",flight_change,changes,medium
+change_021,"I want to change to a different airport",flight_change,changes,medium
+change_022,"Can I change my flight to tomorrow?",flight_change,changes,high
+change_023,"I need to change my whole itinerary",flight_change,changes,medium
+change_024,"How do I change from direct to connecting flight?",flight_change,changes,medium
+change_025,"I want to change my ticket type",flight_change,changes,medium
+change_026,"Can I change my flight without penalty?",flight_change,changes,medium
+change_027,"I need to change due to medical reasons",flight_change,changes,high
+change_028,"How do I change my frequent flyer number?",flight_change,changes,low
+change_029,"I want to change to a cheaper flight option",flight_change,changes,medium
+change_030,"Can I change my emergency contact info?",flight_change,changes,low
+change_031,"I need to change my special service request",flight_change,changes,medium
+change_032,"How do I change my passport information?",flight_change,changes,high
+change_033,"I want to change from window to aisle seat",flight_change,changes,medium
+change_034,"Can I change my flight class after booking?",flight_change,changes,medium
+change_035,"I need to change my departure terminal",flight_change,changes,medium
+change_036,"How do I change my booking reference?",flight_change,changes,low
+change_037,"I want to change my travel companion",flight_change,changes,medium
+change_038,"Can I change to a later departure time?",flight_change,changes,medium
+change_039,"I need to change my check-in preferences",flight_change,changes,low
+change_040,"How do I change my notification settings?",flight_change,changes,low

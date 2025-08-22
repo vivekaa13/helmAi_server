@@ -1,0 +1,41 @@
+id,text,intent,category,priority
+status_001,"What's my flight status?",flight_status,status,high
+status_002,"Is my flight on time?",flight_status,status,high
+status_003,"Has my flight been delayed?",flight_status,status,high
+status_004,"I want to check if my flight is cancelled",flight_status,status,high
+status_005,"Where can I see live flight updates?",flight_status,status,medium
+status_006,"How do I get flight delay notifications?",flight_status,status,medium
+status_007,"What gate is my flight departing from?",flight_status,status,high
+status_008,"When will boarding start?",flight_status,status,medium
+status_009,"I need real-time flight information",flight_status,status,medium
+status_010,"Has the departure time changed?",flight_status,status,high
+status_011,"How long is the delay expected to be?",flight_status,status,high
+status_012,"Will my connecting flight wait?",flight_status,status,high
+status_013,"What's causing the flight delay?",flight_status,status,medium
+status_014,"Can I get updates via text message?",flight_status,status,medium
+status_015,"How often is flight status updated?",flight_status,status,low
+status_016,"My flight disappeared from the board",flight_status,status,high
+status_017,"Is there a new departure terminal?",flight_status,status,high
+status_018,"When will the gate be announced?",flight_status,status,medium
+status_019,"I need to know about weather delays",flight_status,status,medium
+status_020,"How do I check arrival time at destination?",flight_status,status,medium
+status_021,"When will I know if my flight is delayed?",flight_status,status,medium
+status_022,"I need alerts for any schedule changes",flight_status,status,medium
+status_023,"Can I track my flight in real-time?",flight_status,status,medium
+status_024,"What if the departure gate changes?",flight_status,status,high
+status_025,"I want to know about potential delays",flight_status,status,medium
+status_026,"Can I see historical on-time performance?",flight_status,status,low
+status_027,"I need to inform others about my flight status",flight_status,status,medium
+status_028,"What if my connecting flight is affected?",flight_status,status,high
+status_029,"I want updates about boarding time",flight_status,status,medium
+status_030,"Can I see if the aircraft has arrived?",flight_status,status,medium
+status_031,"I need to know about crew delays",flight_status,status,medium
+status_032,"What if there are air traffic control delays?",flight_status,status,medium
+status_033,"I want to track my inbound flight",flight_status,status,medium
+status_034,"Can I get updates about seat upgrades?",flight_status,status,medium
+status_035,"I need to know if flights are oversold",flight_status,status,medium
+status_036,"What about mechanical delays?",flight_status,status,medium
+status_037,"I want to see all flights to my destination",flight_status,status,medium
+status_038,"Can I check on partner airline flights?",flight_status,status,medium
+status_039,"I need updates about baggage carousel numbers",flight_status,status,medium
+status_040,"What if security delays affect my flight?",flight_status,status,medium

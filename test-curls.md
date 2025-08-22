@@ -153,14 +153,20 @@ Invoke-RestMethod -Uri "http://127.0.0.1:3000/api/voice/process" -Method POST -C
 2. **Second Request**: 
    - Detects confirmation number pattern
    - Finds `flight_cancellation` in user's intent history
-   - Calls Lambda: `https://hxbfsbcegpmohxsa2bkc6nisfy0lchoa.lambda-url.us-east-1.on.aws/?userId=USER001`
-   - Processes upcoming trips data
-   - Returns personalized cancellation confirmation
+   - **Lambda 1**: Calls `https://hxbfsbcegpmohxsa2bkc6nisfy0lchoa.lambda-url.us-east-1.on.aws/?userId=USER001`
+   - Processes upcoming trips data and gets earliest flight
+   - Extracts `bookingId` from the selected trip
+   - **Lambda 2**: Calls `https://wm6b7xql5roxzpkuo3seg4neje0ychje.lambda-url.us-east-1.on.aws/` with bookingId
+   - Only on successful cancellation, returns personalized confirmation
 
 ## Debug Information
 
 The server logs will show:
 - `🔍 User USER001 provided confirmation number for cancellation`
-- `🌐 Calling Lambda API for user: USER001`
+- `📞 Calling Lambda API for user: USER001`
 - `📊 Received X upcoming trips from Lambda`
-- `✈️ Processing most recent trip: [flight details]`
+- `📋 Found booking to cancel: [bookingId] - [confirmationNumber]`
+- `🗑️ Calling cancellation Lambda for bookingId: [bookingId]`
+- `✅ Cancellation Lambda response: [response data]`
+- `🎉 Booking successfully cancelled: [confirmationNumber]`
+- `✅ Booking cancelled successfully: [confirmationNumber] - [route]`

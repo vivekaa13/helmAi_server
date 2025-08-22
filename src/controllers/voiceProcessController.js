@@ -59,11 +59,48 @@ const cancelBooking = async (userId) => {
         
         // Get the earliest upcoming flight
         const nextFlight = sortedTrips[0];
+        console.log(`📋 Found booking to cancel: ${nextFlight.bookingId} - ${nextFlight.confirmationNumber}`);
+        
+        // Call cancellation Lambda API
+        console.log(`🗑️ Calling cancellation Lambda for bookingId: ${nextFlight.bookingId}`);
+        const cancellationUrl = 'https://wm6b7xql5roxzpkuo3seg4neje0ychje.lambda-url.us-east-1.on.aws/';
+        
+        try {
+            const cancellationResponse = await axios.post(cancellationUrl, {
+                bookingId: nextFlight.bookingId
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            console.log(`✅ Cancellation Lambda response:`, cancellationResponse.data);
+            
+            // Only proceed with success response if Lambda cancellation was successful
+            if (cancellationResponse.status === 200) {
+                console.log(`🎉 Booking successfully cancelled: ${nextFlight.confirmationNumber}`);
+            } else {
+                console.log(`⚠️ Cancellation Lambda returned status: ${cancellationResponse.status}`);
+                return {
+                    responseText: "There was an issue cancelling your booking. Please contact customer support for assistance.",
+                    screenAction: {},
+                    data: {}
+                };
+            }
+            
+        } catch (cancellationError) {
+            console.error("❌ Error calling cancellation Lambda:", cancellationError.response?.data || cancellationError.message);
+            return {
+                responseText: "Unable to cancel your booking at this time. Please try again or contact customer support.",
+                screenAction: {},
+                data: {}
+            };
+        }
         
         // Create cancellation confirmation message
         const responseText = `Your flight ${nextFlight.flight} from ${nextFlight.route} scheduled for ${nextFlight.date} with confirmation number ${nextFlight.confirmationNumber} has been successfully cancelled. A refund will be processed within 3-5 business days.`;
         
-        console.log(`✅ Booking cancelled: ${nextFlight.confirmationNumber} - ${nextFlight.route}`);
+        console.log(`✅ Booking cancelled successfully: ${nextFlight.confirmationNumber} - ${nextFlight.route}`);
         
         return {
             responseText: responseText,

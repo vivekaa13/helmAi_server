@@ -39,3 +39,4 @@ baggage_037,"Can I check in bags early?",baggage_inquiry,baggage,medium
 baggage_038,"I have prescription medications to pack",baggage_inquiry,baggage,high
 baggage_039,"What if my bag contents spill during flight?",baggage_inquiry,baggage,medium
 baggage_040,"I need to travel with work equipment",baggage_inquiry,baggage,medium
+baggage_041,"Where is my luggage?",baggage_inquiry,baggage,high

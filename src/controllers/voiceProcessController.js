@@ -1,5 +1,39 @@
 const vectorService = require('../services/openSearchService');
 
+// Store user intent history (in production, use Redis or database)
+const userIntentHistory = new Map();
+
+const addToIntentHistory = (userId, intent) => {
+    if (!userIntentHistory.has(userId)) {
+        userIntentHistory.set(userId, []);
+    }
+    
+    const history = userIntentHistory.get(userId);
+    history.push(intent);
+    
+    // Keep only last 5 intents
+    if (history.length > 5) {
+        history.shift();
+    }
+    
+    userIntentHistory.set(userId, history);
+};
+
+const getIntentHistory = (userId) => {
+    return userIntentHistory.get(userId) || [];
+};
+
+const cancelBooking = () => {
+    console.log("🎯 Processing booking cancellation...");
+    console.log("✅ Booking cancelled successfully");
+    
+    return {
+        responseText: "Cancellation Successful",
+        screenAction: {},
+        data: {}
+    };
+};
+
 const generateResponseByIntent = (intent, text, userId, context) => {
     const baseResponse = {
         success: true,
@@ -71,7 +105,7 @@ const generateResponseByIntent = (intent, text, userId, context) => {
                 ...baseResponse,
                 responseText: "I can help you cancel your flight. Please provide your confirmation number so I can locate your booking.",
                 screenAction: {
-                    navigateTo: "CancelScreen",
+                    navigateTo: "TripsScreen",
                     showSection: "confirmation_input"
                 },
                 data: {},
@@ -305,6 +339,92 @@ const processVoice = async (req, res) => {
             });
         }
 
+        // Check for confirmation number first, before intent recognition
+        if (text.toLowerCase().includes('confirmation number') || 
+            text.toLowerCase().includes('confirmation code') ||
+            text.toLowerCase().includes('booking reference') ||
+            /\b[A-Z]{2,}\d{2,}\b/.test(text) || // Matches patterns like ABC123, AA456
+            /\b\d{6,}\b/.test(text)) { // Matches 6+ digit numbers
+            
+            const recentIntents = getIntentHistory(userId);
+            const hasCancellationIntent = recentIntents.includes('flight_cancellation');
+            const hasChangeIntent = recentIntents.includes('flight_change');
+            const hasCheckinIntent = recentIntents.includes('flight_checkin');
+            
+            if (hasCancellationIntent) {
+                console.log(`🔍 User ${userId} provided confirmation number for cancellation`);
+                const cancellationResult = cancelBooking();
+                
+                return res.json({
+                    success: true,
+                    intent: 'booking_cancellation_confirmed',
+                    userId: userId,
+                    responseText: cancellationResult.responseText,
+                    screenAction: cancellationResult.screenAction,
+                    data: cancellationResult.data,
+                    nextStep: {
+                        expectedInput: "cancellation_complete",
+                        prompt: "Your booking has been cancelled. Is there anything else I can help you with?"
+                    }
+                });
+            }
+            
+            if (hasChangeIntent) {
+                console.log(`🔍 User ${userId} provided confirmation number for flight change`);
+                return res.json({
+                    success: true,
+                    intent: 'flight_change_confirmed',
+                    userId: userId,
+                    responseText: "I found your booking. Here are available alternative flights:",
+                    screenAction: {
+                        navigateTo: "RescheduleScreen",
+                        showSection: "available_flights"
+                    },
+                    data: {
+                        originalBooking: {
+                            confirmationNumber: "ABC123",
+                            flightNumber: "AA456",
+                            route: "JFK → MIA",
+                            originalDate: "2025-08-21"
+                        },
+                        alternativeFlights: []
+                    },
+                    nextStep: {
+                        expectedInput: "flight_selection",
+                        prompt: "Which new flight would you like to select?"
+                    }
+                });
+            }
+            
+            if (hasCheckinIntent) {
+                console.log(`🔍 User ${userId} provided confirmation number for check-in`);
+                return res.json({
+                    success: true,
+                    intent: 'checkin_confirmed',
+                    userId: userId,
+                    responseText: "Found your booking! You can now check in for your flight.",
+                    screenAction: {
+                        navigateTo: "CheckinScreen",
+                        showSection: "checkin_details"
+                    },
+                    data: {
+                        booking: {
+                            confirmationNumber: "ABC123",
+                            passengerName: "John Doe",
+                            flightNumber: "AA456",
+                            route: "JFK → MIA",
+                            date: "2025-08-21",
+                            time: "08:00 AM"
+                        }
+                    },
+                    nextStep: {
+                        expectedInput: "checkin_complete",
+                        prompt: "Would you like to select seats or complete check-in?"
+                    }
+                });
+            }
+        }
+
         if (!vectorService.initialized) {
             await vectorService.initialize();
         }
@@ -312,6 +432,9 @@ const processVoice = async (req, res) => {
         // Get intent from text similarity
         const intentResult = await vectorService.searchSimilarIntents(text, 0.3);
         const detectedIntent = intentResult.intent;
+
+        // Add detected intent to user's history (before generating response)
+        addToIntentHistory(userId, detectedIntent);
 
         // Generate response based on detected intent
         const response = generateResponseByIntent(detectedIntent, text, userId, context);

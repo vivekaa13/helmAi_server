@@ -1,4 +1,5 @@
 const vectorService = require('../services/openSearchService');
+const axios = require('axios');
 
 // Store user intent history (in production, use Redis or database)
 const userIntentHistory = new Map();
@@ -23,15 +24,74 @@ const getIntentHistory = (userId) => {
     return userIntentHistory.get(userId) || [];
 };
 
-const cancelBooking = () => {
-    console.log("🎯 Processing booking cancellation...");
-    console.log("✅ Booking cancelled successfully");
-    
-    return {
-        responseText: "Cancellation Successful",
-        screenAction: {},
-        data: {}
-    };
+const cancelBooking = async (userId) => {
+    try {
+        console.log("🎯 Processing booking cancellation...");
+        console.log(`📞 Calling Lambda API for user: ${userId}`);
+        
+        // Call Lambda to get user's trips
+        const lambdaUrl = `https://hxbfsbcegpmohxsa2bkc6nisfy0lchoa.lambda-url.us-east-1.on.aws/?userId=${userId}`;
+        const response = await axios.get(lambdaUrl);
+        
+        if (!response.data.success || !response.data.upcomingTrips) {
+            console.log("❌ No upcoming trips found or API error");
+            return {
+                responseText: "I couldn't find any upcoming bookings to cancel. Please check your booking details.",
+                screenAction: {},
+                data: {}
+            };
+        }
+        
+        // Sort upcoming trips by date (earliest first)
+        const sortedTrips = response.data.upcomingTrips.sort((a, b) => {
+            const dateA = new Date(a.time || a.date);
+            const dateB = new Date(b.time || b.date);
+            return dateA - dateB;
+        });
+        
+        if (sortedTrips.length === 0) {
+            return {
+                responseText: "You don't have any upcoming flights to cancel.",
+                screenAction: {},
+                data: {}
+            };
+        }
+        
+        // Get the earliest upcoming flight
+        const nextFlight = sortedTrips[0];
+        
+        // Create cancellation confirmation message
+        const responseText = `Your flight ${nextFlight.flight} from ${nextFlight.route} scheduled for ${nextFlight.date} with confirmation number ${nextFlight.confirmationNumber} has been successfully cancelled. A refund will be processed within 3-5 business days.`;
+        
+        console.log(`✅ Booking cancelled: ${nextFlight.confirmationNumber} - ${nextFlight.route}`);
+        
+        return {
+            responseText: responseText,
+            screenAction: {
+                navigateTo: "TripsScreen",
+                showSection: "cancellation_confirmation"
+            },
+            data: {
+                cancelledFlight: {
+                    confirmationNumber: nextFlight.confirmationNumber,
+                    route: nextFlight.route,
+                    date: nextFlight.date,
+                    flight: nextFlight.flight,
+                    totalAmount: nextFlight.totalAmount,
+                    refundAmount: nextFlight.totalAmount,
+                    refundTimeline: "3-5 business days"
+                }
+            }
+        };
+        
+    } catch (error) {
+        console.error("❌ Error calling Lambda API:", error);
+        return {
+            responseText: "I encountered an error while trying to cancel your booking. Please try again or contact customer support.",
+            screenAction: {},
+            data: {}
+        };
+    }
 };
 
 const generateResponseByIntent = (intent, text, userId, context) => {
@@ -353,7 +413,7 @@ const processVoice = async (req, res) => {
             
             if (hasCancellationIntent) {
                 console.log(`🔍 User ${userId} provided confirmation number for cancellation`);
-                const cancellationResult = cancelBooking();
+                const cancellationResult = await cancelBooking(userId);
                 
                 return res.json({
                     success: true,
